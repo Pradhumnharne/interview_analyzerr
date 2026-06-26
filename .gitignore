@@ -1,0 +1,35 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Generated reports (optional - uncomment to track)
+# assets/reports/*.pdf
+# assets/reports/*.png
+
+# SQLite database
+database/*.db
+
+# Streamlit logs
+streamlit.out.log
+streamlit.err.log
+
+# Old project folder
+interview_analyzer/
+
+# Agents config
+.agents/
