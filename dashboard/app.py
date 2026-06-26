@@ -258,12 +258,40 @@ def page_home():
 # =============================================================
 # PAGE: START INTERVIEW
 # =============================================================
+def _is_cloud_environment() -> bool:
+    """Detect if running on Streamlit Cloud (no local webcam)."""
+    import platform
+    # Streamlit Cloud runs on Linux containers
+    # Check for common cloud indicators
+    return (os.environ.get("STREAMLIT_SHARING_MODE") is not None
+            or os.environ.get("HOSTNAME", "").startswith("streamlit")
+            or (platform.system() == "Linux"
+                and os.path.exists("/mount/src")))
+
+
 def page_interview():
     """Live webcam interview analysis page."""
     st.markdown('<p class="hero-title" style="font-size:2rem">'
                 '🎥 Live Interview Session</p>',
                 unsafe_allow_html=True)
     st.markdown("")
+
+    # Cloud environment notice
+    if _is_cloud_environment():
+        st.warning(
+            "⚠️ **Live webcam analysis requires running the app locally.**\n\n"
+            "Streamlit Cloud does not have access to your camera. "
+            "To use the live interview feature:\n\n"
+            "```bash\n"
+            "git clone https://github.com/Pradhumnharne/interview_analyzerr.git\n"
+            "cd interview_analyzerr\n"
+            "pip install -r requirements.txt\n"
+            "streamlit run dashboard/app.py\n"
+            "```\n\n"
+            "You can still view the **Dashboard**, **Previous Reports**, "
+            "and **Settings** pages on the cloud."
+        )
+        st.markdown("")
 
     # Controls
     col_a, col_b, col_c = st.columns([1, 1, 1])
