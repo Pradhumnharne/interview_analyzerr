@@ -54,15 +54,7 @@ from utils.helpers import (
 )
 
 
-# =============================================================
-# PAGE CONFIG  (must be the first Streamlit command)
-# =============================================================
-st.set_page_config(
-    page_title="AI Interview Analyzer",
-    page_icon="🎯",
-    layout="wide",
-    initial_sidebar_state="expanded",
-)
+
 
 
 # =============================================================
@@ -897,6 +889,12 @@ def page_settings():
 # =============================================================
 def main():
     """Application entry point and page router."""
+    st.set_page_config(
+        page_title="AI Interview Analyzer",
+        page_icon="🎯",
+        layout="wide",
+        initial_sidebar_state="expanded",
+    )
     inject_css()
     init_session_state()
     render_sidebar()
