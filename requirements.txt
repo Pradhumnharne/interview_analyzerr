@@ -1,10 +1,11 @@
 # =============================================================
 # AI Interview Analyzer - Requirements
 # =============================================================
-# Core computer vision and media processing
-opencv-python-headless
-mediapipe
-numpy<2.0
+# MediaPipe (installs its own opencv dependency)
+mediapipe==0.10.14
+
+# Numerical computation
+numpy==1.26.4
 
 # Web application framework
 streamlit
