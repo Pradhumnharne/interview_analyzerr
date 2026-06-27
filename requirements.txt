@@ -1,7 +1,10 @@
 # =============================================================
-# AI Interview Analyzer - Requirements
+# AI Interview Analyzer - Requirements (Streamlit Cloud)
 # =============================================================
-# MediaPipe (installs its own opencv dependency)
+# Headless OpenCV (no system GUI libs needed)
+opencv-contrib-python-headless
+
+# MediaPipe for face mesh, pose, hands
 mediapipe==0.10.14
 
 # Numerical computation
