@@ -2,19 +2,16 @@
 # AI Interview Analyzer - Requirements
 # =============================================================
 # Core computer vision and media processing
-opencv-python-headless==4.10.0.84
-mediapipe==0.10.18
-numpy==1.26.4
+opencv-python-headless
+mediapipe
+numpy<2.0
 
 # Web application framework
-streamlit==1.41.1
+streamlit
 
 # Data visualization and analysis
-matplotlib==3.9.3
-pandas==2.2.3
+matplotlib
+pandas
 
 # PDF report generation
-reportlab==4.2.5
-
-# Database (SQLite is built-in, no extra package needed)
-# sqlite3 is part of the Python standard library
+reportlab
